@@ -3,9 +3,10 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 // creo el propio esquema
 const Reserva=new Schema({
-    idCliente:{
-        type: Number,
-        required:true
+    
+    idHabitacion:{
+        type:String,
+        required: true
     },
     nombre:{
         type:String,
@@ -15,15 +16,19 @@ const Reserva=new Schema({
         type:String,
         requited:true
     },
-    fechaInicio:{
+    telefono:{
+        type:String,
+        required:true
+    },
+    fecha_in:{
         type:Date,
         required:true
     },
-    fechaFinal:{
+    fecha_out:{
         type:Date,
         required:true
     },
-    numeroPersonas:{
+    numero_Personas:{
         type:Number,
         required:true
     },
@@ -31,10 +36,7 @@ const Reserva=new Schema({
         type: Number,
         required: true
     },
-    idHabitacion:{
-        type: String,
-        required:true
-    }
+   
     
 })
 //Se envía el modelo de datos
@@ -42,9 +44,3 @@ export const modeloReserva=mongoose.model('reservas', Reserva);
 
 
 
-//Nombre cliente
-//apellido
-//fecha de inicio Reserva  Date
-//fecha final reserva  Date
-//número de personas
-//costo Numero
